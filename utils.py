@@ -25,11 +25,11 @@ def soft_dice(*, y_true, y_pred):
     intersection = (y_pred * y_true).sum(0)
     scores = 2. * (intersection + eps) / (y_pred.sum(0) + y_true.sum(0) + eps)
     score = scores.sum() / scores.numel()
+    
     return torch.clamp(score, 0., 1.)
 
 
 def hard_dice(*, y_true, y_pred, thr=0.5):
-    #y_pred = torch.round(y_pred)
     y_pred = (y_pred > thr).float()
     return soft_dice(y_true=y_true, y_pred=y_pred)
 
@@ -53,6 +53,18 @@ class DiceLoss(nn.Module):
         return 1 - soft_dice(y_true=target, y_pred=torch.sigmoid(inputs))
 
 
+class BCEDiceLoss(nn.Module):
+    def __init__(self, dice_weight=0.5):
+        super().__init__()
+        self._dice = DiceLoss()
+        self._dice_weight = dice_weight
+
+    def forward(self, inputs, target):
+        return (1 - self._dice_weight) * nn.BCEWithLogitsLoss()(inputs, target) + \
+            self._dice_weight * self._dice(inputs, target)
+
+
+
 def read_image(img_name, mask_name=None):
     IMG_HEIGHT = 256
     im = skimage.io.imread(img_name)
@@ -74,7 +86,6 @@ def make_blending(img_path, mask_path, alpha=0.5):
 def save_predictions_as_imgs(loader, model, thr=0.5, folder="saved_images/", device='cuda'):
     model.eval()
     for idx, data in enumerate(loader):
-        
         x = data['image'].to(device=device)
         y = data['mask']
         with torch.no_grad():
