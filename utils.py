@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 import torchvision
+import skimage.io
+import numpy as np
 
 def get_mean_std(loader):
     ch_sum, ch_squared_sum, count_of_batches = 0, 0, 0
@@ -16,21 +18,6 @@ def get_mean_std(loader):
     return mean, std 
 
 
-class DiceLoss(nn.Module):
-    def __init__(self, weight=None, size_average=True):
-        super(DiceLoss, self).__init__()
-
-    def forward(self, inputs, targets, smooth=1):
-        inputs = torch.sigmoid(inputs)       
-        inputs = inputs.view(-1)
-        targets = targets.view(-1)
-        
-        intersection = (inputs * targets).sum()                            
-        dice = (2.*intersection + smooth)/(inputs.sum() + targets.sum() + smooth)  
-        
-        return 1 - dice
-
-
 def soft_dice(*, y_true, y_pred):
     eps = 1e-15
     y_pred = y_pred.contiguous().view(y_pred.numel())
@@ -41,8 +28,9 @@ def soft_dice(*, y_true, y_pred):
     return torch.clamp(score, 0., 1.)
 
 
-def hard_dice(*, y_true, y_pred):
-    y_pred = torch.round(y_pred)
+def hard_dice(*, y_true, y_pred, thr=0.5):
+    #y_pred = torch.round(y_pred)
+    y_pred = (y_pred > thr).float()
     return soft_dice(y_true=y_true, y_pred=y_pred)
 
 
@@ -55,6 +43,33 @@ def accuracy(y_true, y_pred, thr=0.5):
     num_pixels += torch.numel(y_pred)
     
     return num_correct/num_pixels*100
+
+
+class DiceLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, inputs, target):
+        return 1 - soft_dice(y_true=target, y_pred=torch.sigmoid(inputs))
+
+
+def read_image(img_name, mask_name=None):
+    IMG_HEIGHT = 256
+    im = skimage.io.imread(img_name)
+    im = skimage.transform.rescale(im, IMG_HEIGHT * 1. / im.shape[0], multichannel=True)
+    im = skimage.img_as_ubyte(im)
+    if mask_name is not None:
+        mask = (skimage.io.imread(mask_name)[:,:,-1]==255).astype(np.uint8)*255
+        mask = skimage.transform.rescale(mask, IMG_HEIGHT * 1. / mask.shape[0], order=0, preserve_range=True)
+        mask = (mask > 0).astype(np.uint8)
+        return im, mask
+    return im
+
+def make_blending(img_path, mask_path, alpha=0.5):
+    img, mask = read_image(img_path, mask_path)
+    colors = np.array([[0,0,0], [0,255,0]], np.uint8)
+    return (img*alpha + colors[mask.astype(np.int32)]*(1. - alpha)).astype(np.uint8)
+
 
 def save_predictions_as_imgs(loader, model, thr=0.5, folder="saved_images/", device='cuda'):
     model.eval()
