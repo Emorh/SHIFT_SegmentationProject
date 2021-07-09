@@ -4,6 +4,7 @@ import torchvision
 import skimage.io
 import numpy as np
 
+
 def get_mean_std(loader):
     ch_sum, ch_squared_sum, count_of_batches = 0, 0, 0
     
@@ -64,7 +65,6 @@ class BCEDiceLoss(nn.Module):
             self._dice_weight * self._dice(inputs, target)
 
 
-
 def read_image(img_name, mask_name=None):
     IMG_HEIGHT = 256
     im = skimage.io.imread(img_name)
@@ -76,6 +76,7 @@ def read_image(img_name, mask_name=None):
         mask = (mask > 0).astype(np.uint8)
         return im, mask
     return im
+
 
 def make_blending(img_path, mask_path, alpha=0.5):
     img, mask = read_image(img_path, mask_path)
