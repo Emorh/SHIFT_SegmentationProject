@@ -1,0 +1,179 @@
+2021-07-12 14:30:59,796 INFO    MainThread:18940 [internal.py:wandb_internal():91] W&B internal server running at pid: 18940, started at: 2021-07-12 14:30:59.790745
+2021-07-12 14:30:59,796 INFO    WriterThread:18940 [datastore.py:open_for_write():80] open: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\run-3qkof0wb.wandb
+2021-07-12 14:30:59,797 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: check_version
+2021-07-12 14:30:59,804 DEBUG   SenderThread:18940 [sender.py:send():179] send: header
+2021-07-12 14:30:59,804 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: check_version
+2021-07-12 14:31:00,258 DEBUG   SenderThread:18940 [sender.py:send():179] send: run
+2021-07-12 14:31:04,212 INFO    SenderThread:18940 [dir_watcher.py:__init__():168] watching files in: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files
+2021-07-12 14:31:04,212 INFO    SenderThread:18940 [sender.py:_start_run_threads():719] run started: 3qkof0wb with start time 1626075058
+2021-07-12 14:31:04,212 DEBUG   SenderThread:18940 [sender.py:send():179] send: summary
+2021-07-12 14:31:04,213 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: run_start
+2021-07-12 14:31:04,452 INFO    SenderThread:18940 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2021-07-12 14:31:05,223 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_created():216] file/dir created: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-summary.json
+2021-07-12 14:31:07,661 DEBUG   HandlerThread:18940 [meta.py:__init__():39] meta init
+2021-07-12 14:31:07,661 DEBUG   HandlerThread:18940 [meta.py:__init__():53] meta init done
+2021-07-12 14:31:07,661 DEBUG   HandlerThread:18940 [meta.py:probe():210] probe
+2021-07-12 14:31:07,668 DEBUG   HandlerThread:18940 [meta.py:_setup_git():200] setup git
+2021-07-12 14:31:08,202 DEBUG   HandlerThread:18940 [meta.py:_setup_git():207] setup git done
+2021-07-12 14:31:08,202 DEBUG   HandlerThread:18940 [meta.py:_save_pip():57] save pip
+2021-07-12 14:31:08,203 DEBUG   HandlerThread:18940 [meta.py:_save_pip():71] save pip done
+2021-07-12 14:31:08,203 DEBUG   HandlerThread:18940 [meta.py:_save_conda():78] save conda
+2021-07-12 14:31:08,229 ERROR   HandlerThread:18940 [meta.py:_save_conda():85] Error saving conda packages
+Traceback (most recent call last):
+  File "C:\Users\gefre\anaconda3\envs\env\lib\site-packages\wandb\sdk\internal\meta.py", line 83, in _save_conda
+    subprocess.call(["conda", "env", "export"], stdout=f)
+  File "C:\Users\gefre\anaconda3\envs\env\lib\subprocess.py", line 339, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "C:\Users\gefre\anaconda3\envs\env\lib\subprocess.py", line 800, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\gefre\anaconda3\envs\env\lib\subprocess.py", line 1207, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] ÕÂ Û‰‡ÂÚÒˇ Ì‡ÈÚË ÛÍ‡Á‡ÌÌ˚È Ù‡ÈÎ
+2021-07-12 14:31:08,230 DEBUG   HandlerThread:18940 [meta.py:_save_conda():86] save conda done
+2021-07-12 14:31:08,230 DEBUG   HandlerThread:18940 [meta.py:probe():252] probe done
+2021-07-12 14:31:08,343 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: stop_status
+2021-07-12 14:31:08,343 DEBUG   SenderThread:18940 [sender.py:send():179] send: files
+2021-07-12 14:31:08,343 INFO    SenderThread:18940 [sender.py:_save_file():841] saving file wandb-metadata.json with policy now
+2021-07-12 14:31:08,344 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_created():216] file/dir created: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\requirements.txt
+2021-07-12 14:31:08,344 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_created():216] file/dir created: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:08,344 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_created():216] file/dir created: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\conda-environment.yaml
+2021-07-12 14:31:08,345 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_created():216] file/dir created: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-metadata.json
+2021-07-12 14:31:08,345 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: stop_status
+2021-07-12 14:31:09,033 DEBUG   SenderThread:18940 [sender.py:send():179] send: history
+2021-07-12 14:31:09,033 DEBUG   SenderThread:18940 [sender.py:send():179] send: summary
+2021-07-12 14:31:09,035 INFO    SenderThread:18940 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2021-07-12 14:31:09,300 INFO    Thread-17 :18940 [upload_job.py:push():137] Uploaded file C:\Users\gefre\AppData\Local\Temp\tmpjvgbqw6uwandb\33ul7yd1-wandb-metadata.json
+2021-07-12 14:31:09,344 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-summary.json
+2021-07-12 14:31:10,279 INFO    Thread-18 :18940 [upload_job.py:push():137] Uploaded file C:\Users\gefre\AppData\Local\Temp\tmpjvgbqw6uwandb\30hle4vl-wandb-metadata.json
+2021-07-12 14:31:10,345 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:12,345 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:13,879 DEBUG   SenderThread:18940 [sender.py:send():179] send: history
+2021-07-12 14:31:13,910 DEBUG   SenderThread:18940 [sender.py:send():179] send: summary
+2021-07-12 14:31:13,925 INFO    SenderThread:18940 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2021-07-12 14:31:14,346 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-summary.json
+2021-07-12 14:31:14,347 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:16,348 INFO    Thread-12 :18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:17,356 DEBUG   SenderThread:18940 [sender.py:send():179] send: telemetry
+2021-07-12 14:31:17,358 DEBUG   SenderThread:18940 [sender.py:send():179] send: exit
+2021-07-12 14:31:17,358 INFO    SenderThread:18940 [sender.py:send_exit():287] handling exit code: 1
+2021-07-12 14:31:17,359 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:17,359 INFO    SenderThread:18940 [sender.py:send_exit():295] send defer
+2021-07-12 14:31:17,360 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:17,362 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:17,362 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 0
+2021-07-12 14:31:17,363 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:17,363 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 0
+2021-07-12 14:31:17,363 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 1
+2021-07-12 14:31:17,365 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:17,365 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 1
+2021-07-12 14:31:17,440 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:17,440 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 1
+2021-07-12 14:31:17,440 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 2
+2021-07-12 14:31:17,441 DEBUG   SenderThread:18940 [sender.py:send():179] send: stats
+2021-07-12 14:31:17,441 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:17,441 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 2
+2021-07-12 14:31:17,441 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:17,441 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 2
+2021-07-12 14:31:17,441 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 3
+2021-07-12 14:31:17,442 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:17,442 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 3
+2021-07-12 14:31:17,451 DEBUG   SenderThread:18940 [sender.py:send():179] send: summary
+2021-07-12 14:31:17,467 INFO    SenderThread:18940 [sender.py:_save_file():841] saving file wandb-summary.json with policy end
+2021-07-12 14:31:17,468 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:17,468 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 3
+2021-07-12 14:31:17,468 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 4
+2021-07-12 14:31:17,468 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:17,468 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 4
+2021-07-12 14:31:17,468 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:17,469 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 4
+2021-07-12 14:31:17,472 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:17,885 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 5
+2021-07-12 14:31:17,885 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:17,886 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:17,886 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 5
+2021-07-12 14:31:17,886 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:17,886 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 5
+2021-07-12 14:31:17,886 INFO    SenderThread:18940 [dir_watcher.py:finish():282] shutting down directory watcher
+2021-07-12 14:31:17,987 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,350 INFO    SenderThread:18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-summary.json
+2021-07-12 14:31:18,350 INFO    SenderThread:18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:18,350 INFO    SenderThread:18940 [dir_watcher.py:_on_file_modified():229] file/dir modified: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\config.yaml
+2021-07-12 14:31:18,350 INFO    SenderThread:18940 [dir_watcher.py:finish():312] scan: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files
+2021-07-12 14:31:18,351 INFO    SenderThread:18940 [dir_watcher.py:finish():318] scan save: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\conda-environment.yaml conda-environment.yaml
+2021-07-12 14:31:18,351 INFO    SenderThread:18940 [dir_watcher.py:finish():318] scan save: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\config.yaml config.yaml
+2021-07-12 14:31:18,351 INFO    SenderThread:18940 [dir_watcher.py:finish():318] scan save: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log output.log
+2021-07-12 14:31:18,352 INFO    SenderThread:18940 [dir_watcher.py:finish():318] scan save: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\requirements.txt requirements.txt
+2021-07-12 14:31:18,354 INFO    SenderThread:18940 [dir_watcher.py:finish():318] scan save: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-metadata.json wandb-metadata.json
+2021-07-12 14:31:18,354 INFO    SenderThread:18940 [dir_watcher.py:finish():318] scan save: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-summary.json wandb-summary.json
+2021-07-12 14:31:18,357 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 6
+2021-07-12 14:31:18,357 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:18,358 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:18,359 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 6
+2021-07-12 14:31:18,362 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:18,362 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 6
+2021-07-12 14:31:18,362 INFO    SenderThread:18940 [file_pusher.py:finish():177] shutting down file pusher
+2021-07-12 14:31:18,460 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,460 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:18,562 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,562 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:18,665 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,666 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:18,770 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,771 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:18,873 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,873 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:18,975 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:18,976 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,083 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,083 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,186 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,187 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,268 INFO    Thread-19 :18940 [upload_job.py:push():137] Uploaded file C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\config.yaml
+2021-07-12 14:31:19,277 INFO    Thread-21 :18940 [upload_job.py:push():137] Uploaded file C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\requirements.txt
+2021-07-12 14:31:19,293 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,293 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,361 INFO    Thread-20 :18940 [upload_job.py:push():137] Uploaded file C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\output.log
+2021-07-12 14:31:19,394 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,394 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,497 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,497 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,599 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,600 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,704 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,706 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,726 INFO    Thread-22 :18940 [upload_job.py:push():137] Uploaded file C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\files\wandb-summary.json
+2021-07-12 14:31:19,809 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,809 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,910 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:19,912 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:19,929 INFO    Thread-11 :18940 [sender.py:transition_state():308] send defer: 7
+2021-07-12 14:31:19,931 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:19,932 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 7
+2021-07-12 14:31:19,933 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:19,933 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 7
+2021-07-12 14:31:20,013 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:20,313 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 8
+2021-07-12 14:31:20,314 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:20,316 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:20,316 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 8
+2021-07-12 14:31:20,316 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:20,317 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 8
+2021-07-12 14:31:20,317 INFO    SenderThread:18940 [sender.py:transition_state():308] send defer: 9
+2021-07-12 14:31:20,320 DEBUG   SenderThread:18940 [sender.py:send():179] send: final
+2021-07-12 14:31:20,322 DEBUG   SenderThread:18940 [sender.py:send():179] send: footer
+2021-07-12 14:31:20,322 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: defer
+2021-07-12 14:31:20,322 INFO    HandlerThread:18940 [handler.py:handle_request_defer():141] handle defer: 9
+2021-07-12 14:31:20,323 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: defer
+2021-07-12 14:31:20,323 INFO    SenderThread:18940 [sender.py:send_request_defer():304] handle sender defer: 9
+2021-07-12 14:31:20,418 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: poll_exit
+2021-07-12 14:31:20,419 DEBUG   SenderThread:18940 [sender.py:send_request():193] send_request: poll_exit
+2021-07-12 14:31:20,419 INFO    SenderThread:18940 [file_pusher.py:join():182] waiting for file pusher
+2021-07-12 14:31:20,425 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: get_summary
+2021-07-12 14:31:20,463 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: sampled_history
+2021-07-12 14:31:20,465 DEBUG   HandlerThread:18940 [handler.py:handle_request():124] handle_request: shutdown
+2021-07-12 14:31:20,465 INFO    HandlerThread:18940 [handler.py:finish():638] shutting down handler
+2021-07-12 14:31:21,322 INFO    WriterThread:18940 [datastore.py:close():288] close: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\run-3qkof0wb.wandb
+2021-07-12 14:31:21,421 INFO    SenderThread:18940 [sender.py:finish():945] shutting down sender
+2021-07-12 14:31:21,421 INFO    SenderThread:18940 [file_pusher.py:finish():177] shutting down file pusher
+2021-07-12 14:31:21,421 INFO    SenderThread:18940 [file_pusher.py:join():182] waiting for file pusher
+2021-07-12 14:31:21,425 INFO    MainThread:18940 [internal.py:handle_exit():78] Internal process exited

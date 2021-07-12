@@ -1,6 +1,7 @@
 import tqdm
 import os
 import torch
+import wandb
 
 class Trainer:
     CHECKPOINTS_PATH = 'checkpoints'
@@ -25,6 +26,7 @@ class Trainer:
     def fit(self, train_loader):
         passed_epochs_without_upgrades = 0
         
+        wandb.watch(self._model, self._criterion, log='all', log_freq=10)
         for epoch in range(self._epochs):
             if passed_epochs_without_upgrades > self._early_stopping:
                 return 
@@ -55,6 +57,8 @@ class Trainer:
             avg_metrics['loss'] += batch_metrics['loss']
             avg_metrics[self._metric_name] += batch_metrics[self._metric_name]
         
+        wandb.log({'loss': avg_metrics['loss'] / len(loader)})
+        wandb.log({self._metric_name: avg_metrics[self._metric_name]/len(loader)})
         return {'loss': avg_metrics['loss'] / len(loader), 
                 self._metric_name: avg_metrics[self._metric_name] / len(loader)}
     
