@@ -8,7 +8,10 @@ import numpy as np
 def get_mean_std(loader):
     ch_sum, ch_squared_sum, count_of_batches = 0, 0, 0
     
-    for data, _ in loader:
+    for data in loader:
+        data = data['image'].float()
+        data /= 255        
+
         ch_sum += torch.mean(data, dim=[0, 2, 3])
         ch_squared_sum += torch.mean(data**2, dim=[0, 2, 3])
         count_of_batches += 1

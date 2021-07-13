@@ -1,0 +1,26 @@
+{
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.9",
+    "heartbeatAt": "2021-07-13T12:08:17.553561",
+    "startedAt": "2021-07-13T12:08:12.912240",
+    "docker": null,
+    "gpu": "GeForce GTX 1050",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "-f",
+        "C:\\Users\\gefre\\AppData\\Roaming\\jupyter\\runtime\\kernel-9a8272a7-f5e1-41f8-a289-2976bfa9e616.json"
+    ],
+    "state": "running",
+    "program": "Desktop/Sezino/\u0428\u0418\u0424\u0422/SegmentationProject/Segmentation.ipynb",
+    "root": "C:/Users/gefre/Desktop/Sezino/\u0428\u0418\u0424\u0422/SegmentationProject",
+    "git": {
+        "remote": "https://github.com/Emorh/SHIFT_SegmentationProject.git",
+        "commit": "93f39ae2ea89f4a3fef5ca424b12fd1f795b9dbb"
+    },
+    "email": "s.vasilev99@mail.ru",
+    "host": "DESKTOP-AOF98JI",
+    "username": "gefre",
+    "executable": "C:\\Users\\gefre\\anaconda3\\envs\\env\\python.exe"
+}

@@ -3,3 +3,6 @@
 
 Примеры работы сети:
 ![alt text](pictures/main.jpg)
+
+
+ссылка на wandb: https://wandb.ai/emorh/segmentation%20project?workspace=user-emorh

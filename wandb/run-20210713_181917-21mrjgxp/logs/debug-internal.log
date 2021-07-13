@@ -1,0 +1,21 @@
+2021-07-13 18:19:51,725 INFO    MainThread:15804 [internal.py:wandb_internal():91] W&B internal server running at pid: 15804, started at: 2021-07-13 18:19:51.710840
+2021-07-13 18:19:51,728 INFO    WriterThread:15804 [datastore.py:open_for_write():80] open: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210713_181917-21mrjgxp\run-21mrjgxp.wandb
+2021-07-13 18:19:51,729 DEBUG   HandlerThread:15804 [handler.py:handle_request():124] handle_request: check_version
+2021-07-13 18:19:51,756 DEBUG   SenderThread:15804 [sender.py:send():179] send: header
+2021-07-13 18:19:51,757 DEBUG   SenderThread:15804 [sender.py:send_request():193] send_request: check_version
+2021-07-13 18:19:52,275 DEBUG   SenderThread:15804 [sender.py:send():179] send: run
+2021-07-13 18:19:53,034 INFO    SenderThread:15804 [dir_watcher.py:__init__():168] watching files in: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210713_181917-21mrjgxp\files
+2021-07-13 18:19:53,034 INFO    SenderThread:15804 [sender.py:_start_run_threads():719] run started: 21mrjgxp with start time 1626175162
+2021-07-13 19:05:43,175 ERROR   FileStreamThread:15804 [file_stream.py:_thread_except_body():311] generic exception in filestream thread
+Traceback (most recent call last):
+  File "C:\Users\gefre\anaconda3\envs\env\lib\site-packages\wandb\sdk\internal\file_stream.py", line 307, in _thread_except_body
+    self._thread_body()
+  File "C:\Users\gefre\anaconda3\envs\env\lib\site-packages\wandb\sdk\internal\file_stream.py", line 288, in _thread_body
+    "uploaded": list(uploaded),
+  File "C:\Users\gefre\anaconda3\envs\env\lib\site-packages\wandb\sdk\internal\file_stream.py", line 320, in _handle_response
+    raise response
+  File "C:\Users\gefre\anaconda3\envs\env\lib\site-packages\wandb\sdk\internal\file_stream.py", line 419, in request_with_retry
+    response.raise_for_status()
+  File "C:\Users\gefre\AppData\Roaming\Python\Python37\site-packages\requests\models.py", line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/files/emorh/segmentation%20project/21mrjgxp/file_stream
