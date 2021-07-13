@@ -1,0 +1,45 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.10.33
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.7.9
+    t:
+      1:
+      - 1
+      2:
+      - 1
+      3:
+      - 1
+      - 2
+      4: 3.7.9
+      5: 0.10.33
+      8:
+      - 1
+      - 3
+      - 5
+early_stopping:
+  desc: null
+  value: 50
+epochs:
+  desc: null
+  value: 50
+loss_weight:
+  desc: null
+  value: 0.8
+lr:
+  desc: null
+  value: 0.001
+lr_reduce_rate:
+  desc: null
+  value: 0.5
+n_filters:
+  desc: null
+  value: 32
+patience:
+  desc: null
+  value: 4

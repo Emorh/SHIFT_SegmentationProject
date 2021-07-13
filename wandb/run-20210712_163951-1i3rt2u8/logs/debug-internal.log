@@ -1,0 +1,11 @@
+2021-07-12 16:40:10,315 INFO    MainThread:3896 [internal.py:wandb_internal():91] W&B internal server running at pid: 3896, started at: 2021-07-12 16:40:10.310606
+2021-07-12 16:40:10,316 DEBUG   HandlerThread:3896 [handler.py:handle_request():124] handle_request: check_version
+2021-07-12 16:40:10,316 INFO    WriterThread:3896 [datastore.py:open_for_write():80] open: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_163951-1i3rt2u8\run-1i3rt2u8.wandb
+2021-07-12 16:40:10,350 DEBUG   SenderThread:3896 [sender.py:send():179] send: header
+2021-07-12 16:40:10,350 DEBUG   SenderThread:3896 [sender.py:send_request():193] send_request: check_version
+2021-07-13 06:50:57,672 WARNING MainThread:3896 [internal.py:is_dead():367] Internal process exiting, parent pid 4404 disappeared
+2021-07-13 06:51:00,264 ERROR   MainThread:3896 [internal.py:wandb_internal():143] Internal process shutdown.
+2021-07-13 06:51:01,601 INFO    SenderThread:3896 [sender.py:finish():945] shutting down sender
+2021-07-13 06:51:02,811 INFO    HandlerThread:3896 [handler.py:finish():638] shutting down handler
+2021-07-13 06:51:02,044 INFO    WriterThread:3896 [datastore.py:close():288] close: C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_163951-1i3rt2u8\run-1i3rt2u8.wandb
+2021-07-13 06:51:04,865 INFO    MainThread:3896 [internal.py:handle_exit():78] Internal process exited

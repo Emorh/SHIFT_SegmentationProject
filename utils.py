@@ -8,7 +8,10 @@ import numpy as np
 def get_mean_std(loader):
     ch_sum, ch_squared_sum, count_of_batches = 0, 0, 0
     
-    for data, _ in loader:
+    for data in loader:
+        data = data['image'].float()
+        data /= 255        
+
         ch_sum += torch.mean(data, dim=[0, 2, 3])
         ch_squared_sum += torch.mean(data**2, dim=[0, 2, 3])
         count_of_batches += 1
@@ -65,15 +68,23 @@ class BCEDiceLoss(nn.Module):
             self._dice_weight * self._dice(inputs, target)
 
 
+def read_mask(mask_name):
+    IMG_HEIGHT = 256
+    mask = (skimage.io.imread(mask_name)[:,:,-1]==255).astype(np.uint8)*255
+    mask = skimage.transform.rescale(mask, IMG_HEIGHT * 1. / mask.shape[0], order=0, preserve_range=True)
+    mask = (mask > 0).astype(np.uint8)
+
+    return mask
+
+
+
 def read_image(img_name, mask_name=None):
     IMG_HEIGHT = 256
     im = skimage.io.imread(img_name)
     im = skimage.transform.rescale(im, IMG_HEIGHT * 1. / im.shape[0], multichannel=True)
     im = skimage.img_as_ubyte(im)
     if mask_name is not None:
-        mask = (skimage.io.imread(mask_name)[:,:,-1]==255).astype(np.uint8)*255
-        mask = skimage.transform.rescale(mask, IMG_HEIGHT * 1. / mask.shape[0], order=0, preserve_range=True)
-        mask = (mask > 0).astype(np.uint8)
+        mask = read_mask(mask_name)
         return im, mask
     return im
 

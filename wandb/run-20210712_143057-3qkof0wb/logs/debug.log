@@ -1,0 +1,29 @@
+2021-07-12 14:30:57,815 INFO    MainThread:4404 [wandb_setup.py:_flush():69] setting env: {}
+2021-07-12 14:30:57,815 INFO    MainThread:4404 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-07-12 14:30:57,815 INFO    MainThread:4404 [wandb_setup.py:_flush():69] setting login settings: {'api_key': '7064b88ab66169813024dd29eea88b9e35e644c6'}
+2021-07-12 14:30:57,816 INFO    MainThread:4404 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-07-12 14:30:57,816 INFO    MainThread:4404 [wandb_init.py:_log_setup():337] Logging user logs to C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\logs\debug.log
+2021-07-12 14:30:57,816 INFO    MainThread:4404 [wandb_init.py:_log_setup():338] Logging internal logs to C:\Users\gefre\Desktop\Sezino\ÿ»‘“\SegmentationProject\wandb\run-20210712_143057-3qkof0wb\logs\debug-internal.log
+2021-07-12 14:30:57,838 INFO    MainThread:4404 [wandb_init.py:_jupyter_setup():288] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001F5ABFD1688>
+2021-07-12 14:30:57,838 INFO    MainThread:4404 [wandb_init.py:init():370] calling init triggers
+2021-07-12 14:30:57,839 INFO    MainThread:4404 [wandb_init.py:init():377] wandb.init called with sweep_config: {}
+config: {'lr': 0.001, 'epochs': 8, 'early_stopping': 10}
+2021-07-12 14:30:57,839 INFO    MainThread:4404 [wandb_init.py:init():419] starting backend
+2021-07-12 14:30:57,839 INFO    MainThread:4404 [backend.py:_multiprocessing_setup():72] multiprocessing start_methods=spawn, using: spawn
+2021-07-12 14:30:57,841 INFO    MainThread:4404 [backend.py:ensure_launched():135] starting backend process...
+2021-07-12 14:30:58,206 INFO    MainThread:4404 [backend.py:ensure_launched():140] started backend process with pid: 18940
+2021-07-12 14:30:58,207 INFO    MainThread:4404 [wandb_init.py:init():424] backend started and connected
+2021-07-12 14:30:58,219 INFO    MainThread:4404 [wandb_run.py:_label_probe_notebook():844] probe notebook
+2021-07-12 14:30:58,219 INFO    MainThread:4404 [wandb_run.py:_label_probe_notebook():851] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2021-07-12 14:30:58,219 INFO    MainThread:4404 [wandb_init.py:init():472] updated telemetry
+2021-07-12 14:30:58,220 INFO    MainThread:4404 [wandb_init.py:init():491] communicating current version
+2021-07-12 14:31:00,255 INFO    MainThread:4404 [wandb_init.py:init():496] got version response 
+2021-07-12 14:31:00,255 INFO    MainThread:4404 [wandb_init.py:init():504] communicating run to backend with 30 second timeout
+2021-07-12 14:31:04,212 INFO    MainThread:4404 [wandb_init.py:init():529] starting run threads in backend
+2021-07-12 14:31:08,240 INFO    MainThread:4404 [wandb_run.py:_console_start():1623] atexit reg
+2021-07-12 14:31:08,260 INFO    MainThread:4404 [wandb_run.py:_redirect():1497] redirect: SettingsConsole.WRAP
+2021-07-12 14:31:08,261 INFO    MainThread:4404 [wandb_run.py:_redirect():1534] Wrapping output streams.
+2021-07-12 14:31:08,326 INFO    MainThread:4404 [wandb_run.py:_redirect():1558] Redirects installed.
+2021-07-12 14:31:08,326 INFO    MainThread:4404 [wandb_init.py:init():554] run started, returning control to user process
+2021-07-12 14:31:08,460 INFO    MainThread:4404 [wandb_watch.py:watch():40] Watching
+2021-07-12 14:31:17,056 INFO    MainThread:4404 [wandb_run.py:finish():1293] finishing run emorh/segmentation project/3qkof0wb
