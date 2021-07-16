@@ -85,4 +85,58 @@ class UNet(nn.Module):
         final = self.final(dec1)
 
         return final
+
+
+class ModifiedDecoderBlock(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(ModifiedDecoderBlock, self).__init__()              
+        self.conv_block = DoubleConvBlock(in_channels, out_channels)
+
+    def forward(self, x, y):
+        x = nn.functional.interpolate(x, scale_factor=2, mode='bilinear', align_corners=True)
+        return self.conv_block(x + y)
+
+class ModifiedUNet(nn.Module):
+    def __init__(self, in_channels=3, out_channels=1, n_filters=64):
+        super().__init__()
+        self.pool = nn.MaxPool2d(2, 2)
+
+        self.enc1 = EncoderBlock(in_channels, n_filters)
+        self.enc2 = EncoderBlock(n_filters, n_filters * 2)
+        self.enc3 = EncoderBlock(n_filters * 2, n_filters * 4)
+        self.enc4 = EncoderBlock(n_filters * 4, n_filters * 8)
         
+        self.center = DoubleConvBlock(n_filters * 8, n_filters * 8)
+        
+        self.dec4 = ModifiedDecoderBlock(n_filters * 8, n_filters * 4)
+        self.dec3 = ModifiedDecoderBlock(n_filters * 4, n_filters * 2)
+        self.dec2 = ModifiedDecoderBlock(n_filters * 2, n_filters)
+        self.dec1 = ModifiedDecoderBlock(n_filters, 32)
+
+        self.final = nn.Conv2d(32, out_channels, kernel_size=1)
+
+    def forward(self, x):
+        #x - 512 * 512 * 3
+        
+        #x - 256 * 256 * 64, enc1 - 512 * 512 * 64
+        x, enc1 = self.enc1(x)
+        #x - 128 * 128 * 128, enc2 - 256 * 256 * 128 
+        x, enc2 = self.enc2(x)
+        #x - 64 * 64 * 256, enc3 - 128 * 128 * 256
+        x, enc3 = self.enc3(x)
+        #x - 32 * 32 * 512, enc4 - 64 * 64 * 512
+        x, enc4 = self.enc4(x)
+        
+        #center - 32 * 32 * 512
+        center = self.center(x)
+        
+        #
+        dec4 = self.dec4(center, enc4)
+        dec3 = self.dec3(dec4, enc3)
+        dec2 = self.dec2(dec3, enc2)
+        dec1 = self.dec1(dec2, enc1)
+
+        
+        final = self.final(dec1)
+
+        return final
